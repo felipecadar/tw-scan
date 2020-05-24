@@ -33,7 +33,6 @@ def job():
     print("I'm working...")
 
 if __name__ == "__main__":
-    schedule.every(2).hours.do(getAll)
 
     if not os.path.exists("tw/villages/"):
         os.makedirs("tw/villages/")
@@ -48,10 +47,11 @@ if __name__ == "__main__":
         os.makedirs("tw/oda/")
     
     getAll()
-
+    
     if "1" in sys.argv:
         exit()
         
+    schedule.every(2).hours.do(getAll)
     while True:
         schedule.run_pending()
         time.sleep(1)
