@@ -1,4 +1,3 @@
-import schedule
 import urllib, requests
 import time, os, sys
 
@@ -50,7 +49,8 @@ if __name__ == "__main__":
     
     if "1" in sys.argv:
         exit()
-        
+
+    import schedule
     schedule.every(2).hours.do(getAll)
     while True:
         schedule.run_pending()
