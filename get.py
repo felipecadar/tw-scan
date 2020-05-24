@@ -4,10 +4,10 @@ import pathlib
 import datetime
 
 here = str(pathlib.Path(__file__).parent.absolute())
-print(here)
+print("Getting stats")
+print(datetime.datetime.now())
 
 def getAll():
-    print(datetime.datetime.now())
     village_url = "https://br101.tribalwars.com.br/map/village.txt"
     village_data = urllib.parse.unquote_plus(requests.get(village_url).text)
     
